@@ -3,6 +3,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sonic 3 AIR Mods</title>
 <link rel="shortcut icon" href="add/addons.png" />
+<script>
+    window.onbeforeunload = function() {
+        const cookies = document.cookie.split(';');
+        let warningEnabled = false;
+        cookies.forEach(cookie => {
+            const [name, value] = cookie.trim().split('=');
+            if (name === 'warningEnabled') {
+                warningEnabled = (value === 'true');
+            }
+        });
+        if (warningEnabled) {
+            return "Are you sure you want to leave this page?";
+        }
+    };
+</script>
 </head>
 <body>
 <style>
